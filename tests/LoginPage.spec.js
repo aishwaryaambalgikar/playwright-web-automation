@@ -45,5 +45,22 @@ test('Login Page Practice - Test', async ({browser})=> // Using ananymous functi
 
     // Close the browser
     await context.close(); 
+});
 
+test('UI Element Handling',async ({page})=>{
+    await page.goto('https://rahulshettyacademy.com/loginpagePractise/'); // Navigate to a website
+
+    // Locators
+    const usernameField = await page.locator('#username'); // To locate the username field
+    const passwordField = await page.locator('#password'); // To locate the password field
+    const signInButton = await page.locator("#signInBtn"); // To locate the Sign in button
+    const dropdown = await page.locator("select.form-control"); // To locate the drop down
+    const RadioBtn = await page.locator(".radiotextsty");
+    const popupokbtn = await page.locator("#okay")
+
+    await usernameField.fill('rahulshettyacademy'); // To fill the username field
+    await passwordField.fill('Learning@830$3mK2'); // To fill the password field
+
+    await dropdown.selectOption("Consult");
+    await RadioBtn.last().click();
 });

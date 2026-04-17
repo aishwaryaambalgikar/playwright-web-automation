@@ -1,6 +1,6 @@
 const { test, expect } = require('@playwright/test');
  
-test('Client App login', async ({ page }) => {
+test.only('Client App login', async ({ page }) => {
     // js file- Login js, DashboardPage
     // Values for Login 
     const email = "anshika@gmail.com";
@@ -22,8 +22,8 @@ test('Client App login', async ({ page }) => {
     await loginbtn.click();
 
     // Waiting for page to load
-    await page.waitForLoadState('networkidle');
-    await cardtitle.first().waitFor();
+    await page.waitForLoadState('networkidle'); // OR
+    // await cardtitle.first().waitFor();
     
     //Returning all the title and printing
     const alltitles = await page.locator(".card-body b").allTextContents();
