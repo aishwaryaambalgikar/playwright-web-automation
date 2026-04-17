@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-test.only('Login Page Practice - Test', async ({browser})=> // Using ananymous function to write test case
+test('Login Page Practice - Test', async ({browser})=> // Using ananymous function to write test case
 { 
     const context = await browser.newContext(); // To open browser
     const page = await context.newPage(); // To open new tab in the browser
