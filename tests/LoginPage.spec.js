@@ -7,7 +7,7 @@ test('Login Page Practice - Test', async ({browser})=> // Using ananymous functi
     await page.goto('https://rahulshettyacademy.com/loginpagePractise/'); // Navigate to a website
 
     // Playwright Code 
-    console.log("My First Playwright Test");
+    console.log("Login Page Practice - Test");
     console.log(await page.title());  // To get the title of the page
     await expect(page).toHaveTitle("LoginPage Practise | Rahul Shetty Academy"); // To verify the title of the page
 
