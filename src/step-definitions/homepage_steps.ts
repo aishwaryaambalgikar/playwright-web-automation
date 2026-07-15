@@ -9,7 +9,7 @@ let page: Page; // Page object
 
 const url = 'https://webdriveruniversity.com'; // Home page URL
 
-// Open the homepage.
+// Open the homepage.g
 Given('I navigate to the WebDriverUniversity.com homepage', async () => {
     console.log('Navigating to the homepage');
     browser = await chromium.launch({ headless: false });
@@ -21,6 +21,13 @@ Given('I navigate to the WebDriverUniversity.com homepage', async () => {
 // Click the Contact Us button.
 When('I click on the Contact Us button', async () => {
     console.log('Clicking on the Contact Us button');
-    await page.pause();
-    // getByRole('link', { name: 'CONTACT US Contact Us Form' })
+    //await page.pause();
+    const contactUsButton = await page.getByRole('link', { name: 'CONTACT US Contact Us Form' });
+    await contactUsButton.click();
+});
+
+When('I switch to the new tab', async () => {
+    console.log('Switching to the new tab');
+    page = await context.waitForEvent('page');
+    await page.bringToFront();
 });

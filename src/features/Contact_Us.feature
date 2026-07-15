@@ -6,6 +6,7 @@ Feature: WebDriverUniversity.com - Contact Us Page
     Scenario: Valid Contact Us Form Submission
         Given I navigate to the WebDriverUniversity.com homepage
         When I click on the Contact Us button
+        And I switch to the new tab
         And I enter a valid first name
         And I enter a valid last name
         And I enter a valid email address

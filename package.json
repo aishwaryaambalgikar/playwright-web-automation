@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:cucumber": "cucumber-js src/features/*.feature --require-module ts-node/register --require tsconfig-paths/register --require src/step-definitions/**/*.ts"
+    "test:cucumber": "cucumber-js src/features/*.feature --require-module ts-node/register --require tsconfig-paths/register --require src/step-definitions/**/*.ts --require src/utils/cucumber-timeout.ts"
   },
   "keywords": [],
   "author": "",
