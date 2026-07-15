@@ -1,5 +1,8 @@
+# Contact Us page tests for WebDriverUniversity.com
+# Verifies successful form submission.
 Feature: WebDriverUniversity.com - Contact Us Page
 
+    # Successful Contact Us form submission.
     Scenario: Valid Contact Us Form Submission
         Given I navigate to the WebDriverUniversity.com homepage
         When I click on the Contact Us button

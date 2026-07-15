@@ -1,37 +1,26 @@
 import { Given, When, Then } from '@cucumber/cucumber';
-import { Browser,Page } from "playwright";
+import { Browser, Page, chromium } from 'playwright';
 
-let browser: Browser;
-let context: any; // Placeholder for the browser context
-let page: Page; // Placeholder for the page object
+// Home page Cucumber step definitions.
+// Placeholder steps currently log actions and use Playwright variables.
+let browser: Browser; // Playwright browser instance
+let context: any; // Browser context
+let page: Page; // Page object
 
+const url = 'https://webdriveruniversity.com'; // Home page URL
+
+// Open the homepage.
 Given('I navigate to the WebDriverUniversity.com homepage', async () => {
-    console.log("Navigating to the WebDriverUniversity.com homepage");
+    console.log('Navigating to the homepage');
+    browser = await chromium.launch({ headless: false });
+    context = await browser.newContext({viewport: { width: 1920, height: 1080 }});
+    page = await context.newPage();
+    await page.goto(url);
 });
 
+// Click the Contact Us button.
 When('I click on the Contact Us button', async () => {
-    console.log("Clicking on the Contact Us button");
-});
-When('I enter a valid first name', function () {
-    console.log("Entering a valid first name");
-});
-
-When('I enter a valid last name', function () {
-    console.log("Entering a valid last name");
-});
-
-When('I enter a valid email address', function () {
-    console.log("Entering a valid email address");
-});
-
-When('I enter a valid message', function () {
-    console.log("Entering a valid message");
-});
-
-When('I click on the submit button', function () {
-    console.log("Clicking on the submit button");
-});
-
-Then('I should see a success message confirming the form submission', function () {
-    console.log("Checking for success message");
+    console.log('Clicking on the Contact Us button');
+    await page.pause();
+    // getByRole('link', { name: 'CONTACT US Contact Us Form' })
 });
